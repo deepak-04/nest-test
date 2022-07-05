@@ -1,0 +1,16 @@
+version: 0.2phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - docker build -t  nest-build:latest .
+      - docker tag docker tag nest-build:latest public.ecr.aws/b5k3m4u1/nest:latest
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+      - docker docker push public.ecr.aws/b5k3m4u1/nest:latest
