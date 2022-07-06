@@ -16,5 +16,5 @@ phases:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push public.ecr.aws/b5k3m4u1/nest:1
+      - docker push public.ecr.aws/b5k3m4u1/deepak:latest
       
