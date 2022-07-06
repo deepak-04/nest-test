@@ -5,7 +5,7 @@ phases:
       - echo Logging in to Amazon ECR...
       - pip install --upgrade awscli==1.18.17 ### Here is my update - and it works
       - aws --version
-      - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/b5k3m4u1
+      - $(aws ecr get-login --no-include-email --region us-east-1)
   build:
     commands:
       - echo Build started on `date`
