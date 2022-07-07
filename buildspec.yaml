@@ -10,11 +10,11 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t  test .
-      - docker tag test:latest public.ecr.aws/b5k3m4u1/deepak:latest
+      - docker build -t  deepak .
+      - docker tag deepak:latest 368772107083.dkr.ecr.ap-south-1.amazonaws.com/test:latest
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push public.ecr.aws/b5k3m4u1/deepak:latest
+      - docker push 368772107083.dkr.ecr.ap-south-1.amazonaws.com/test:latest
       
