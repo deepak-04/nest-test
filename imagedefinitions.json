@@ -1,6 +1,6 @@
 [
     {
-        "name": "ci-cd-task",
+        "name": "test",
         "imageUri": "368772107083.dkr.ecr.ap-south-1.amazonaws.com/test"
     }
 ]
